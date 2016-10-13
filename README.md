@@ -329,3 +329,18 @@ std::vector<std::string> unpackTransactions(const std::string &info) {
 
 #endif // UTILS_H
 ```
+
+## 测试
+
+如果已经有一些正确的输入输出。（自己手算一些测试用例，实在太累。所以我只测试了题目中的数据。）
+比如，`A.txt` 是输入，`B.txt` 是这个输入下正确的输出，
+我们的程序可以这样来测试：
+
+```bash
+$ diff <(cat A.txt | ./stdin2stdout | tr -d ' \t\r\n') <(B.txt | tr -d ' \t\r\n')
+```
+
+（这个 `tr -d ' \t\r\n'` 可以把 whitespace 去掉，防止无关紧要的字符对正确性造成干扰。）
+
+如果上面的指令没有输出，说明我们的结果是正确的（还可以 `echo $?` 看输出是否为 `0`）；
+如果有输出，则说明我们的程序存在问题。
