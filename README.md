@@ -3,23 +3,61 @@
 README 文档用 Markdown 格式书写，用 Pandoc 生成了 PDF 版本。
 代码和文档可以在 GitHub 上查看：[district10/ThoughtWorksHomework20161013](https://github.com/district10/ThoughtWorksHomework20161013)。
 
-代码使用方法：
+## 代码使用方法
 
--   Windows：用 CMake-Gui 生成 Visual Studio 工程，然后编译运行 demo.cpp
--   Linux：
+**Linux**
 
-    ```bash
-    # cd source dir
-    mkdir build && cd build
-    cmake ..
-    make
-    ```
+```bash
+$ cd ThoughtWorksHomework20161013
+$ mkdir build && cd build
+$ cmake ..
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/tzx/git/ThoughtWorksHomework20161013/build
+```
+
+```cpp
+$ make
+Scanning dependencies of target demo
+[ 25%] Building CXX object CMakeFiles/demo.dir/src/demo.cpp.o
+Linking CXX executable demo
+[ 25%] Built target demo
+Scanning dependencies of target stdin2stdout
+[ 50%] Building CXX object CMakeFiles/stdin2stdout.dir/src/stdin2stdout.cpp.o
+Linking CXX executable stdin2stdout
+[ 50%] Built target stdin2stdout
+Scanning dependencies of target test1
+[ 75%] Building CXX object CMakeFiles/test1.dir/tests/test1.cpp.o
+Linking CXX executable test1
+[ 75%] Built target test1
+Scanning dependencies of target test2
+[100%] Building CXX object CMakeFiles/test2.dir/tests/test2.cpp.o
+Linking CXX executable test2
+[100%] Built target test2
+```
+
+**Windows**
 
 ## 例子程序
 
 ### demo.cpp
 
 `demo.cpp`（将会编译为 `demo.exe`）展示了题目中样本数据的输入和结果的输出。
+
+```bash
+$ ./demo
+```
+
 运行结果为：
 
 ```
@@ -70,6 +108,9 @@ Profit: 1160
 
 ```bash
 $ cat ../../inputs/demo.txt | ./stdin2stdout.exe
+```
+
+```
 [Summary]
 
 2016-06-02 20:00~22:00 +210 -240 -30
@@ -110,7 +151,7 @@ Profit: 1160
 std::string generateSummary(const std::string &input) {
     using namespace std;
     int income = 0, payment = 0, profit = 0;
-    vector<std::string> transactions = unpackTransactions(input);
+    vector<string> transactions = unpackTransactions(input);
     string output = "[Summary]\n\n";
     for (int i = 0; i < transactions.size(); ++i) {
         Transaction t;
@@ -265,7 +306,7 @@ private:
 std::string getTransactionInfo(std::istream &is = std::cin) {
     using namespace std;
     string ret, line;
-    while (std::getline(is, line)) {
+    while (getline(is, line)) {
         if (line.at(4) == '-' && line.at(16) == '~') {   // 进行简单的校检
             ret += line + "\n";
         }
