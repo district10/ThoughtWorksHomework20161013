@@ -337,7 +337,7 @@ std::vector<std::string> unpackTransactions(const std::string &info) {
 我们的程序可以这样来测试：
 
 ```bash
-$ diff <(cat A.txt | ./stdin2stdout | tr -d ' \t\r\n') <(B.txt | tr -d ' \t\r\n')
+$ diff <(cat A.txt | ./stdin2stdout | tr -d ' \t\r\n') <(cat B.txt | tr -d ' \t\r\n')
 ```
 
 （这个 `tr -d ' \t\r\n'` 可以把 whitespace 去掉，防止无关紧要的字符对正确性造成干扰。）
