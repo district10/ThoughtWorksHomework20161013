@@ -1,6 +1,7 @@
 # ThoughtWorks 编程作业
 
 README 文档用 Markdown 格式书写，用 Pandoc 生成了 PDF 版本。
+代码和文档可以在 GitHub 上查看：[district10/ThoughtWorksHomework20161013](https://github.com/district10/ThoughtWorksHomework20161013)。
 
 代码使用方法：
 
@@ -92,7 +93,7 @@ Profit: 1160
 ## 程序说明
 
 `generateSummary` 函数在 `GenerateSummary.h` 中实现。
-它的输入是一个字符串，其中每一行代表一个交易（Transaciton），
+它的输入是一个字符串，其中每一行代表一个交易（Transaction），
 输出为题设要求的 Summary 信息。代码不多，我添加了必要的注释：
 
 ```cpp
@@ -121,12 +122,9 @@ std::string generateSummary(const std::string &input) {
     }
     output += "\n";
     char buf[100];
-    snprintf( buf, sizeof(buf), "Total Income: %d\n",  income  );
-    output += buf;
-    snprintf( buf, sizeof(buf), "Total Payment: %d\n", payment );
-    output += buf;
-    snprintf( buf, sizeof(buf), "Profit: %d\n",        profit  );
-    output += buf;
+    snprintf( buf, sizeof(buf), "Total Income: %d\n",  income  ); output += buf;
+    snprintf( buf, sizeof(buf), "Total Payment: %d\n", payment ); output += buf;
+    snprintf( buf, sizeof(buf), "Profit: %d\n",        profit  ); output += buf;
     return output;
 }
 
