@@ -1,5 +1,6 @@
 CMakeCache.txt
 CMakeFiles
+*.docx
 CMakeScripts
 Makefile
 cmake_install.cmake

@@ -1,0 +1,8 @@
+#ifndef CONFIGS_H
+#define CONFIGS_H
+
+#define  BASE_DIR                           "@CMAKE_SOURCE_DIR@/"
+#define TESTS_DIR                           "@CMAKE_SOURCE_DIR@/tests/"
+#define INPUT_DIR                           "@CMAKE_SOURCE_DIR@/inputs/"
+
+#endif  // CONFIGS_H
