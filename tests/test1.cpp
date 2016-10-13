@@ -28,7 +28,7 @@ int main()
             snprintf(buf, sizeof(buf), "%04d-%02d-%02d-%d", year, month, day, ndays);
             string ifilename = INPUT_DIR + string("/test1-input-")  + buf + ".txt";
             string ofilename = INPUT_DIR + string("/test1-output-") + buf + ".txt";
-            ofstream ofsi(ifilename), ofso(ofilename);
+            ofstream ofsi(ifilename.c_str()), ofso(ofilename.c_str());
             if (!ofsi || !ofso) { continue; }
             printf("<%s> -> <%s>...\n", ifilename.c_str(), ofilename.c_str());
             int income = 0, payment = 0, profit = 0;

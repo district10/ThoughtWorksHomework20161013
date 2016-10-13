@@ -11,7 +11,7 @@
 std::string generateSummary(const std::string &input) {
     using namespace std;
     int income = 0, payment = 0, profit = 0;
-    vector<std::string> transactions = unpackTransactions(input);
+    vector<string> transactions = unpackTransactions(input);
     string output = "[Summary]\n\n";
     for (int i = 0; i < transactions.size(); ++i) {
         Transaction t;

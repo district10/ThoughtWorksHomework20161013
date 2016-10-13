@@ -1,6 +1,8 @@
 #include <cstdio>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <cstring>
 
 #include "GenerateSummary.h"
 

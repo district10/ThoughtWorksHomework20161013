@@ -12,7 +12,7 @@
 std::string getTransactionInfo(std::istream &is = std::cin) {
     using namespace std;
     string ret, line;
-    while (std::getline(is, line)) {
+    while (getline(is, line)) {
         if (line.at(4) == '-' && line.at(16) == '~') {   // 进行简单的校检
             ret += line + "\n";
         }
