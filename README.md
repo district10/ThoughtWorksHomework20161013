@@ -1,11 +1,12 @@
 # ThoughtWorks 编程作业
 
 README 文档用 Markdown 格式书写，用 Pandoc 生成了 PDF 版本。
+
 代码和文档可以在 GitHub 上查看：[district10/ThoughtWorksHomework20161013](https://github.com/district10/ThoughtWorksHomework20161013)。
 
 ## 代码使用方法
 
-**Linux**
+使用 cmake 生成 Makefile 工程，然后 `make`：
 
 ```bash
 $ cd ThoughtWorksHomework20161013
@@ -46,13 +47,13 @@ Linking CXX executable test2
 [100%] Built target test2
 ```
 
-**Windows**
+Windows 上使用 CMake-GUI 生成 Visual Studio 工程，然后打开 sln 文件编译运行，其余类似，这里不在赘述。
 
 ## 例子程序
 
 ### demo.cpp
 
-`demo.cpp`（将会编译为 `demo.exe`）展示了题目中样本数据的输入和结果的输出。
+[`demo.cpp`](src/demo.cpp)（将会编译为 `demo.exe`）展示了题目中样本数据的输入和结果的输出。
 
 ```bash
 $ ./demo
@@ -102,7 +103,7 @@ Profit: 1160
 
 ### stdin2stdout.cpp
 
-`stdin2stdout.cpp`（将会被编译为 `stdin2stdout.exe`）的输入为标准输入流，结果输出到标准输出流。
+[`stdin2stdout.cpp`](src/stdin2stdout.cpp)（将会被编译为 `stdin2stdout.exe`）的输入为标准输入流，结果输出到标准输出流。
 
 可以这样使用它：
 
@@ -129,11 +130,11 @@ Total Payment: 2470
 Profit: 1160
 ```
 
-这里的 `../../inputs/demo.txt` 就是题目中的样本数据。
+这里的 [`../../inputs/demo.txt`](inputs/demo.txt) 就是题目中的样本数据。
 
 ## 程序说明
 
-`generateSummary` 函数在 `GenerateSummary.h` 中实现。
+`generateSummary` 函数在 [`GenerateSummary.h`](src/generateSummary.h) 中实现。
 它的输入是一个字符串，其中每一行代表一个交易（Transaction），
 输出为题设要求的 Summary 信息。代码不多，我添加了必要的注释：
 
@@ -178,7 +179,7 @@ std::string generateSummary(const std::string &input) {
 -   `cost` 是球场的租金
 -   `net` 是小明的净利润
 
-下面是 `Transaction.h`，是上面 `parse` 函数实现的源码：
+下面是 [`Transaction.h`](Transaciton.h)，是上面 `parse` 函数实现的源码：
 
 ```cpp
 #ifndef TRANSACTION_H
@@ -289,7 +290,7 @@ private:
 #endif // TRANSACTION_H
 ```
 
-`Utils.h` 有几个工具性质的小函数：
+[`Utils.h`](Utils.h) 有几个工具性质的小函数：
 
 ```cpp
 #ifndef UTILS_H
