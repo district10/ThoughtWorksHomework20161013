@@ -1,6 +1,6 @@
 # ThoughtWorks 编程作业
 
-README 文档用 Markdown 格式书写，用 Pandoc 生成了 PDF 版本。
+README 文档用 Markdown 格式书写，用 Pandoc 生成了 [PDF](README.pdf) 版本。
 
 代码和文档可以在 GitHub 上查看：[district10/ThoughtWorksHomework20161013](https://github.com/district10/ThoughtWorksHomework20161013)。
 
@@ -134,7 +134,7 @@ Profit: 1160
 
 ## 程序说明
 
-`generateSummary` 函数在 [`GenerateSummary.h`](src/generateSummary.h) 中实现。
+`generateSummary` 函数在 [`GenerateSummary.h`](src/GenerateSummary.h) 中实现。
 它的输入是一个字符串，其中每一行代表一个交易（Transaction），
 输出为题设要求的 Summary 信息。代码不多，我添加了必要的注释：
 
@@ -179,7 +179,7 @@ std::string generateSummary(const std::string &input) {
 -   `cost` 是球场的租金
 -   `net` 是小明的净利润
 
-下面是 [`Transaction.h`](Transaciton.h)，是上面 `parse` 函数实现的源码：
+下面是 [`Transaction.h`](src/Transaciton.h)，是上面 `parse` 函数实现的源码：
 
 ```cpp
 #ifndef TRANSACTION_H
@@ -290,7 +290,7 @@ private:
 #endif // TRANSACTION_H
 ```
 
-[`Utils.h`](Utils.h) 有几个工具性质的小函数：
+[`Utils.h`](src/Utils.h) 有几个工具性质的小函数：
 
 ```cpp
 #ifndef UTILS_H
