@@ -277,7 +277,7 @@ private:
         return ret;
     }
 
-    // 计算字符串 str[start, end] 对应的数字
+    // 计算字符串 str[start, end) 对应的数字
     int str2int(const std::string &str, int start, int end) {
         int ret = 0;
         for (int i = start; i < end; ++i) {
